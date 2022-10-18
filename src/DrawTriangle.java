@@ -18,11 +18,29 @@ public class DrawTriangle {
         String spaces=" ";
         String exes="X";
 
-        for (int i=height; i>=0; i--){
-            for (int j=1; j<=height+1; j+=2){
+        // This nest does the right number of exes but not the right number of spaces
+/*        for (int i=height; i>=0; i--){
+            for (int j=1; j<=height+2; j+=2){
                 System.out.print(spaces.repeat(i));
                 System.out.print(exes.repeat(j)+"\n");
             }
+        }*/
+
+        // This nest makes very pretty italic ascii art.
+/*        for (int j=1; j<=height; j+=2){
+            for (int i=height; i>=0; i--){
+                System.out.print(spaces.repeat(i));
+                System.out.print(exes.repeat(j)+"\n");
+            }
+        }*/
+
+        int i=height;
+        int j=1;
+        while (i>=0){
+            System.out.print(spaces.repeat(i));
+            System.out.print(exes.repeat(j)+"\n");
+            i--;
+            j+=2;
         }
     }
 }
